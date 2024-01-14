@@ -64,10 +64,14 @@
         .userAvatar {
             float: left;
             margin-right: 10px;
+            width: 20px;
+            height: 20px;
         }
         .botAvatar {
-            float: right;
-            margin-left: 10px;
+            float: left;
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -75,9 +79,9 @@
         $(document).ready(function(){
             $("#submit").click(function(){
                 var userText = $("#userInput").val();
-                $("#chatbox").append("<div class='userMessage'><img src='man.png' class='userAvatar'>You: " + userText + "</div>");
+                $("#chatbox").append("<div class='userMessage'><img src='https://raw.githubusercontent.com/shubham404-error/AIML-Project-Series/main/proj%202/man.png' class='userAvatar'>You: " + userText + "</div>");
                 $.post("/ask", {question: userText}, function(data){
-                    $("#chatbox").append("<div class='botMessage'><img src='logo.png' class='botAvatar'>Bot: " + data + "</div>");
+                    $("#chatbox").append("<div class='botMessage'><img src='https://raw.githubusercontent.com/shubham404-error/AIML-Project-Series/main/proj%202/logo.png' class='botAvatar'>Bot: " + data + "</div>");
                     $('#chatbox').scrollTop($('#chatbox')[0].scrollHeight);
                 });
                 $("#userInput").val('');
